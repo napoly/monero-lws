@@ -336,9 +336,6 @@ namespace
       command_line::get_arg(args, opts.lws_server_external)
     };
 
-    if (prog.regtest && lws::config::network != cryptonote::MAINNET)
-      MONERO_THROW(lws::error::configuration, "Regtest cannot be used with testnet or stagenet");
-
     if (prog.split_sync_threads < 0.0 || prog.split_sync_threads > 1.0)
       MONERO_THROW(lws::error::configuration, "--split-sync-threads must be between 0 and 1");
     
